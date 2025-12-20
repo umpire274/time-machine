@@ -1,0 +1,9 @@
+[package]
+name = "time-machine"
+version = "0.1.0"
+edition = "2024"
+authors = ["Alessandro Maestri"]
+description = "A narrative-driven text adventure about time travel"
+license = "MIT"
+
+[dependencies]
