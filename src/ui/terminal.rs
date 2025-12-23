@@ -1,3 +1,4 @@
+use crate::mission::mission::MissionKind;
 use std::io::{self, Write};
 use std::thread::sleep;
 use std::time::Duration;
@@ -68,3 +69,29 @@ pub fn wait_for_enter() {
 pub fn pause_ms(ms: u64) {
     sleep(Duration::from_millis(ms));
 }
+
+pub fn print_mission_list() {
+    print_line("");
+    print_line("AVAILABLE TEMPORAL MISSIONS");
+    print_line("");
+
+    for (index, mission) in MissionKind::all().iter().enumerate() {
+        let status = if mission.is_available() {
+            ""
+        } else {
+            " (locked)"
+        };
+
+        print_line(&format!(
+            "{} ) {}{}",
+            index + 1,
+            mission.display_name(),
+            status
+        ));
+    }
+
+    print_line("");
+    print_line("Select a mission by typing: mission <number>");
+    print_line("");
+}
+

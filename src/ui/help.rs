@@ -1,6 +1,6 @@
 use crate::ui::terminal::print_line_with_delay;
 
-pub fn print_help() {
+pub fn print_story() {
     let delay_ms = 10;
     
     print_line_with_delay("", delay_ms);
